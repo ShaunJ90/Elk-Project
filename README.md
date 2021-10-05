@@ -1,2 +1,2 @@
 # Elk-Project
-![ELK Network](Elk%20Network.png)
+![ELK Network](ELK Network.png)

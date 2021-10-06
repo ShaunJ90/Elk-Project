@@ -104,6 +104,7 @@ Once installed I was able to access the Kibana web UI on port 5601. This port wa
 	  - name: Start filebeat service
 	    command: service filebeat start
 
+Metric Beat
 
 	- name: Install metric beat
  	 hosts: webservers

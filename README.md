@@ -11,13 +11,11 @@ This network allows me to access my jump box from my public IP address specified
 
 I installed ELK on the server using the following .yaml script 
 
- 
- 
- name: Configure Elk VM with Docker
-  hosts: elk
-  remote_user: azureuser
-  become: true
-  tasks:
+      name: Configure Elk VM with Docker
+      hosts: elk
+      remote_user: azureuser
+      become: true
+      tasks:
     # Use apt module
     - name: Install docker.io
       apt:
@@ -63,4 +61,3 @@ I installed ELK on the server using the following .yaml script
           -  5601:5601
           -  9200:9200
           -  5044:5044
-      

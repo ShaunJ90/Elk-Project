@@ -65,3 +65,44 @@ I installed ELK on the server using the following .yaml script
 Once installed I was able to access the Kibana web UI on port 5601. This port was allowed through the ELK security group from my public IP address. 
 
  ![kibana](Kibana2.png)
+ 
+ Filebeat and metric beat were installed using the following .yaml scirpts. 
+ 
+ 	- name: Installing and Launch Filebeat
+	  hosts: webservers
+	  become: true
+	  tasks:
+	    # Use command module
+	  - name: Download filebeat deb 
+	    apt:
+	     deb: https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+	
+
+	    # Use command module
+	  - name: Install filebeat .deb
+	    command: dpkg -i filebeat-7.4.0-amd64.deb
+	
+
+	    # Use copy module
+	  - name: Drop in filebeat.yml
+	    copy:
+	      src: /etc/ansible/files/filebeat-config.yml
+	      dest: /etc/filebeat/filebeat.yml
+	
+
+	    # Use command module
+	  - name: enable and configure system module
+	    command: filebeat modules enable system
+	
+
+	    # Use command module
+	  - name: Setup filebeat
+	    command: filebeat setup
+	
+
+	    # Use command module
+	  - name: Start filebeat service
+	    command: service filebeat start
+
+
+

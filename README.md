@@ -61,3 +61,5 @@ I installed ELK on the server using the following .yaml script
           -  5601:5601
           -  9200:9200
           -  5044:5044
+
+Once installed I was able to access the Kibana web UI on port 5601. This port was allowed through the ELK security group from my public IP address. 

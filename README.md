@@ -136,4 +136,4 @@ Metric Beat
 	  - name: start metric beat
     command: service metricbeat start 
 
-Filebeat collects the log files and events. Metricbeat records metrics and statistical data. 
+Filebeat collects the log files and events. Metricbeat records metrics and statistical data. They monitor both web servers. 
